@@ -90,7 +90,12 @@ app.get('/graph', function (req, res) {
         }
       }
       else{
+        if(rows.length<v.count){
+                count=rows.length;
+        }
+        else{
                 count=v.count;
+        }
       }
 
 
@@ -124,3 +129,4 @@ var server = app.listen(8082, function () {
   var port = server.address().port
   console.log('listening at http://%s:%s', host, port)
 });
+
